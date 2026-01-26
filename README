@@ -1,0 +1,22 @@
+Este projeto é uma **Landing Page de Serviços de Saúde**, desenvolvida para fins educacionais na disciplina de **DevOps**.  
+O objetivo é criar uma página simples, organizada e preparada para futuras integrações com back-end, banco de dados e práticas de CI/CD.
+
+---
+
+
+- HTML5  
+- CSS3  
+- SQL (MySQL/MariaDB)  
+- Git e GitHub  
+
+---
+
+
+
+```text
+landing-saude/
+│
+├── index.html      
+├── style.css       
+├── database.sql    
+└── README.md       
