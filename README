@@ -13,10 +13,16 @@ O objetivo é criar uma página simples, organizada e preparada para futuras int
 
 
 
-```text
+
 landing-saude/
 │
 ├── index.html      
 ├── style.css       
 ├── database.sql    
 └── README.md       
+
+
+
+COMO RODAR O PROJETO
+git clone https://github.com/seu-usuario/landing-page.git
+cd landing-page
