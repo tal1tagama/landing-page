@@ -1,65 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Serviços de Saúde</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Saúde Pro</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Cuidar da sua saúde é a nossa prioridade</h1>
-        <p>Atendimento humanizado, simples e acessível para todos.</p>
-    </header>
+<header class="hero" id="home">
+  <nav>
+    <a href="#services">Serviços</a>
+    <a href="#about">Sobre</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contato</a>
+    <button id="darkToggle">🌙</button>
+  </nav>
 
-    <section class="services">
-        <h2>Nossos Serviços</h2>
+  <h1>Cuidar da sua saúde é nossa missão</h1>
+  <p>Atendimento moderno, humano e acessível.</p>
+  <a href="#contact" class="cta">Agende agora</a>
+</header>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Atendimento Clínico</h3>
-                <p>Consultas com profissionais capacitados para cuidar da sua saúde.</p>
-            </div>
+<section id="services" class="services">
+  <h2>Nossos Serviços</h2>
+  <div class="grid">
+    <div class="card">Atendimento Clínico</div>
+    <div class="card">Orientação em Saúde</div>
+    <div class="card">Exames Preventivos</div>
+  </div>
+</section>
 
-            <div class="card">
-                <h3>Orientação em Saúde</h3>
-                <p>Dicas e orientações para prevenção e qualidade de vida.</p>
-            </div>
+<section id="about">
+  <h2>Sobre Nós</h2>
+  <p><strong>Missão:</strong> Promover saúde com qualidade.</p>
+  <p><strong>Visão:</strong> Ser referência em cuidado humano.</p>
+  <p><strong>Valores:</strong> Ética, respeito e empatia.</p>
+</section>
 
-            <div class="card">
-                <h3>Exames e Acompanhamento</h3>
-                <p>Acompanhamento simples e claro dos seus exames.</p>
-            </div>
-        </div>
-    </section>
+<section id="faq">
+  <h2>Perguntas Frequentes</h2>
+  <div class="faq-item">
+    <button class="faq-question">Como agendar?</button>
+    <p class="faq-answer">Entre em contato pelo formulário ou WhatsApp.</p>
+  </div>
+</section>
 
-    <section class="about">
-        <h2>Sobre Nós</h2>
-        <p>
-            Somos uma empresa focada em facilitar o acesso à saúde, oferecendo
-            atendimento humano, rápido e de qualidade.
-        </p>
-    </section>
+<section id="contact">
+  <h2>Contato</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Nome">
+    <input type="email" id="email" placeholder="Email">
+    <textarea id="message" placeholder="Mensagem"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 
-    <section class="contact">
-        <h2>Contato</h2>
+<a class="whatsapp" href="https://wa.me/5500000000000" target="_blank">💬</a>
 
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="E-mail" required>
-            <input type="tel" placeholder="Telefone">
-            <textarea placeholder="Mensagem"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+<footer>
+  <p>© 2026 - Saúde Pro</p>
+</footer>
 
-    <footer>
-        <p>© 2026 - Empresa de Serviços de Saúde</p>
-        <p>Instagram | Facebook | WhatsApp</p>
-    </footer>
-
+<script src="script.js"></script>
 </body>
-
 </html>
