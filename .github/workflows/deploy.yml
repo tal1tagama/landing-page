@@ -32,6 +32,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v4
 
+    - name: Explorando o Runner
+      run: lsb_release -a
     - name: Setup pages
       uses: actions/configure-pages@v4
 
