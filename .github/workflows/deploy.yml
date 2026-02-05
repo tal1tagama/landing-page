@@ -34,7 +34,6 @@ jobs:
 
     - name: Explorando o Runner
       run: lsb_release -a
- 
       run: free -h 
 
     - name: Setup pages
