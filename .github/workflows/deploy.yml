@@ -25,34 +25,49 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.output.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Explorando o Runner
-      run: lsb_release -a && free -h 
+      - name: Explorando o Runner
+        run: lsb_release -a && free -h 
 
-    - name: Setup pages
-      uses: actions/configure-pages@v4
+      - name: Setup pages
+        uses: actions/configure-pages@v4
 
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: '.'
+      - name: Verificar pasta src
+        run: test -d src
 
-    - name: Deploy to Github Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Verificar arquivo CSS
+        run: test -f src/css/style.css
 
-    - name: Validar sintaxe do HTML 
-      uses: htmlhinc/htmlhinc- action@v2
-      with:
-        target_pattern: 'index.html'
+      - name: Verificar footer com nome do aluno
+        run: |
+          grep -i "<footer>" src/index.html
+          grep -i "Talita" src/index.html
 
-      -name: checar arquivos estáticos
-      run: |
+      - name: Validar sintaxe do HTML 
+        uses: Cyb3r-Jak3/htmlhint-action@v1
+        with:
+          target_pattern: 'src/index.html'
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: src
+
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Checar arquivos estáticos
+        run: |
           ls -R
-          echo "Todos os arquivos foram carregados no runner!" 
+          echo "Todos os arquivos foram carregados no runner!"
+
+      - name: Auditoria final
+        run: |
+          echo "O código do aluno Talita foi auditado, está seguindo as normas corretas e está pronto para o deploy!"
