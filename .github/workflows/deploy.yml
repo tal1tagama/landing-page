@@ -46,7 +46,7 @@ jobs:
           grep -i "Talita" src/index.html
 
       - name: Validar sintaxe do HTML
-        uses: Cyb3r-Jak3/htmlhint-action@v1
+        uses: htmlhint/htmlhint-action@v1
         with:
           target_pattern: src/index.html
 
