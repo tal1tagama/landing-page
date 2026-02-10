@@ -45,10 +45,11 @@ jobs:
           grep -i "<footer>" src/index.html
           grep -i "Talita" src/index.html
 
+      - name: Instalar HTMLHint
+        run: npm install -g htmlhint
+
       - name: Validar sintaxe do HTML
-        uses: htmlhint/htmlhint-action@v1
-        with:
-          target_pattern: src/index.html
+        run: htmlhint src/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
