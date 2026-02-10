@@ -1,16 +1,11 @@
-# Define o nome da Workflow
 name: deploy to Github Pages
 
-# É o gatilho(trigger)
 on:
-  # Enviar o código
   push:
-    #Filtra o gatilho, A automação só trabalha com pastas principais
-    branches: ["main", "master"]
-
-  # Isso cria um botão no site do Github
+    branches:
+      - main
+      - master
   workflow_dispatch:
-
 
 permissions:
   contents: read
@@ -18,22 +13,22 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   deploy:
-    environment:
-    - name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Explorando o Runner
-        run: lsb_release -a && free -h 
+        run: lsb_release -a && free -h
 
       - name: Setup pages
         uses: actions/configure-pages@v4
@@ -49,10 +44,10 @@ jobs:
           grep -i "<footer>" src/index.html
           grep -i "Talita" src/index.html
 
-      - name: Validar sintaxe do HTML 
+      - name: Validar sintaxe do HTML
         uses: Cyb3r-Jak3/htmlhint-action@v1
         with:
-          target_pattern: 'src/index.html'
+          target_pattern: src/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -69,5 +64,4 @@ jobs:
           echo "Todos os arquivos foram carregados no runner!"
 
       - name: Auditoria final
-        run: |
-          echo "O código do aluno Talita foi auditado, está seguindo as normas corretas e está pronto para o deploy!"
+        run: echo "O código do aluno Talita foi auditado, está seguindo as normas corretas e está pronto para o deploy!"
