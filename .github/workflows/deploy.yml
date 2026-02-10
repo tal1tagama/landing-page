@@ -46,3 +46,13 @@ jobs:
     - name: Deploy to Github Pages
       id: deployment
       uses: actions/deploy-pages@v4
+
+    - name: Validar sintaxe do HTML 
+      uses: htmlhinc/htmlhinc- action@v2
+      with:
+        target_pattern: 'index.html'
+
+      -name: checar arquivos estáticos
+      run: |
+          ls -R
+          echo "Todos os arquivos foram carregados no runner!" 
