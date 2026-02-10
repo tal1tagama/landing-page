@@ -19,6 +19,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -45,23 +46,4 @@ jobs:
           grep -i "Talita" src/index.html
 
       - name: Validar sintaxe do HTML
-        uses: Cyb3r-Jak3/htmlhint-action@v1
-        with:
-          target_pattern: src/index.html
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: src
-
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-      - name: Checar arquivos estáticos
-        run: |
-          ls -R
-          echo "Todos os arquivos foram carregados no runner!"
-
-      - name: Auditoria final
-        run: echo "O código do aluno Talita foi auditado, está seguindo as normas corretas e está pronto para o deploy!"
+        uses: Cyb3r-Jak3/h
