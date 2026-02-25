@@ -1,0 +1,23 @@
+image: alpine:latest
+
+stages:
+  - test
+
+verificar-arquivos:
+  stage: test
+  script:
+    - echo "Iniciando validação do projeto..."
+
+    # Verifica se o index.html existe
+    - test -f index.html || (echo "ERRO: index.html não encontrado!" && exit 1)
+
+    # Verifica se o arquivo não está vazio
+    - test -s index.html || (echo "ERRO: index.html está vazio!" && exit 1)
+
+    # Verifica se contém a tag <html>
+    - grep -q "<html>" index.html || (echo "ERRO: Tag <html> não encontrada!" && exit 1)
+
+    # Verifica se NÃO contém palavra proibida
+    - if grep -q "palavra_proibida" index.html; then echo "ERRO: Palavra proibida encontrada!"; exit 1; fi
+
+    - echo "✔ Todas as validações passaram com sucesso!"
