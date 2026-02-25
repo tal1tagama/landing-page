@@ -12,4 +12,4 @@ verificar-arquivos:
     - test -s src/index.html || (echo "ERRO: Arquivo vazio!" && exit 1)
     - echo "Procurando <html>..."
     - grep -q "<html>" src/index.html || (echo "ERRO: Tag <html> não encontrada!" && exit 1)
-    - echo "✔ Tudo certo!" 
+    - echo "✔ Tudo certo!"
