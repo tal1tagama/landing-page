@@ -7,9 +7,9 @@ verificar-arquivos:
   stage: test
   script:
     - echo "Verificando se index.html existe..."
-    - test -f index.html || (echo "ERRO: index.html não encontrado!" && exit 1)
-    - echo "Verificando se index.html não está vazio..."
-    - test -s index.html || (echo "ERRO: index.html está vazio!" && exit 1)
+    - test -f index.html || (echo "ERRO: index.html nao encontrado!" && exit 1)
+    - echo "Verificando se index.html nao esta vazio..."
+    - test -s index.html || (echo "ERRO: index.html esta vazio!" && exit 1)
     - echo "Procurando tag <html> dentro do index.html..."
-    - grep -q "<html>" index.html || (echo "ERRO: Tag <html> não encontrada!" && exit 1)
-    - echo "✔ Todas as validações passaram!"
+    - grep -q "<html>" index.html || (echo "ERRO: Tag <html> nao encontrada!" && exit 1)
+    - echo "Todas as validacoes passaram!"
