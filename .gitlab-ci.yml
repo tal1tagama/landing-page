@@ -8,11 +8,8 @@ verificar-arquivos:
   script:
     - echo "Verificando se index.html existe..."
     - test -f src/index.html || (echo "ERRO: index.html não encontrado!" && exit 1)
-
     - echo "Verificando se não está vazio..."
     - test -s src/index.html || (echo "ERRO: Arquivo vazio!" && exit 1)
-
     - echo "Procurando <html>..."
     - grep -q "<html>" src/index.html || (echo "ERRO: Tag <html> não encontrada!" && exit 1)
-
-    - echo "✔ Tudo certo!"
+    - echo "✔ Tudo certo!" 
